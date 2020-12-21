@@ -51,7 +51,7 @@ router.get('/images/add', function(req, res, next) {
 router.post('/images/add', async (req, res) => {
 
 
-    const {nombre, apellido, email, celular} = req.body;
+    const {nombre, apellido, email, fecha_nac } = req.body;
 
     var s3 = new AWS.S3();
     
@@ -61,7 +61,7 @@ router.post('/images/add', async (req, res) => {
         nombre: nombre,
         apellido: apellido,
         email:email,
-        celular:celular,
+        fecha_nac :fecha_nac,
      }
   
       dbConn.query('INSERT INTO contactos SET ?', form_data, function(err, result) { })
@@ -94,7 +94,7 @@ router.post('/images/add', async (req, res) => {
             nombre: nombre,
             apellido: apellido,
             email:email,
-            celular:celular,
+            fecha_nac :fecha_nac ,
             imageURL:data.Location,
          }
         // insert query
@@ -149,7 +149,7 @@ router.get('/images/delete/:id', async (req, res) => {
 })
 
 router.post('/images/update/:id', async (req, res) => {
-    const {nombre, apellido, email, celular} = req.body;
+    const {nombre, apellido, email, fecha_nac } = req.body;
 
     const id = req.params.id;
 
@@ -159,7 +159,7 @@ router.post('/images/update/:id', async (req, res) => {
         nombre: nombre,
         apellido: apellido,
         email:email,
-        celular:celular
+        fecha_nac:fecha_nac 
      }
       
       dbConn.query('UPDATE contactos SET ? WHERE id = ' + id, form_data, function(err, result) {
@@ -217,7 +217,7 @@ router.post('/images/update/:id', async (req, res) => {
                   nombre: nombre,
                   apellido: apellido,
                   email:email,
-                  celular:celular,
+                  fecha_nac :fecha_nac ,
                   imageURL:data.Location,
                }
                
