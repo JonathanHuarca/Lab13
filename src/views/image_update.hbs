@@ -1,0 +1,30 @@
+    <br><br>
+    <div>
+        <div class="card" >
+            <div class="card-body" style="background-color: rgb(150, 209, 189)">
+                     <form action="/images/update/{{photos.id}}" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                    <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="{{photos.nombre}}">
+                             </div>
+                                <div class="form-group">
+                                    <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="{{photos.apellido}}">
+                             </div>
+                             <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="@example" value="{{photos.email}}">
+                             </div>
+                             <div class="form-group">
+                                    <input type="number" name="celular" class="form-control" placeholder="Celular" value="{{photos.celular}}">
+                             </div>
+                                <div class="input-group mb-3">
+                                    <div class="custom-file">
+                                        <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                                        <label for="inputGroupFile01" class="custom-file-label">Choose File</label>
+                                    </div>
+                                </div>
+                               <button class="btn btn-primary">
+                                    Update 
+                                </button>
+                            </form>
+                    </div>
+        </div>
+    </div>
