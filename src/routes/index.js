@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 
   dbConn.query('SELECT * FROM contactos ORDER BY id desc',function(err,photos)     {
       if(err) {
-          req.flash('error', err);
+       
           // render to views/books/index.ejs
           res.render('images',{data:''});   
       } else {
@@ -37,7 +37,7 @@ router.get('/images/add', function(req, res, next) {
 
   dbConn.query('SELECT * FROM contactos ORDER BY id desc',function(err,photos)     {
       if(err) {
-          req.flash('error', err);
+         
           // render to views/books/index.ejs
           res.render('image_form',{data:''});   
       } else {
